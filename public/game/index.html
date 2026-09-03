@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sadhanam Kayyilundo? (Sadhanam in Hand?)</title>
+  <meta name="description" content="A deliberately useless, rage-inducing webcam hand-gesture game where you hunt one target object across ten increasingly unfair levels.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="app-container">
+    <!-- 16:9 Cinematic Stage Wrapper -->
+    <div id="stage-wrapper">
+
+      <!-- Main Game Canvas -->
+      <canvas id="game-stage" width="1280" height="720"></canvas>
+
+      <!-- Thin Timer Bar at Stage Top -->
+      <div id="timer-bar-container">
+        <div id="timer-bar"></div>
+      </div>
+
+      <!-- HUD Top Bar -->
+      <div id="hud-overlay">
+        <div class="hud-group">
+          <span class="hud-title">LEVEL <span id="hud-level-num">1</span>: <span id="hud-level-name">FIRST CONTACT</span></span>
+          <span class="hud-val">HUNTING: <strong id="hud-target-name" style="color:#f59e0b;">Golden Key</strong></span>
+        </div>
+        <div class="hud-group">
+          <span class="hud-badge" id="hud-gesture-badge">GESTURE: READY</span>
+          <span class="hud-val">MISSES: <strong id="hud-miss-count" style="color:#ef4444;">0</strong></span>
+        </div>
+      </div>
+
+      <!-- Red Screen Flash Overlay on Wrong Grab -->
+      <div id="flash-overlay"></div>
+
+      <!-- Deadpan Taunt Toast Overlay -->
+      <div id="taunt-overlay">
+        <span id="taunt-text">Not that one.</span>
+      </div>
+
+      <!-- Corner Camera & Hand Skeleton Preview -->
+      <div id="cam-preview-container">
+        <video id="webcam-video" autoplay playsinline muted></video>
+        <canvas id="skeleton-canvas"></canvas>
+        <div id="cam-status-label">Initializing vision...</div>
+      </div>
+
+      <!-- Bottom Control Bar -->
+      <div id="controls-bar">
+        <button class="btn-ctrl" id="btn-toggle-cam">HIDE CAM</button>
+        <button class="btn-ctrl" id="btn-toggle-debug">HIDE DEBUG</button>
+        <button class="btn-ctrl" id="btn-toggle-mute">MUTE</button>
+        <button class="btn-ctrl btn-danger" id="btn-skip-level">SKIP LEVEL</button>
+      </div>
+
+      <!-- Start Overlay / Camera Flow -->
+      <div class="modal-overlay" id="start-modal">
+        <div class="modal-card">
+          <h1>SADHANAM KAYYILUNDO?</h1>
+          <h2>"Do you have the thing [in your hand]?"</h2>
+
+          <p style="font-size: 12px; color: #d6d3d1; line-height: 1.6; margin-bottom: 16px;">
+            A deliberately useless, rage-inducing webcam hand-gesture game.<br>
+            Hunt the target object across 10 increasingly unfair levels.
+          </p>
+
+          <div class="instructions-grid">
+            <div class="instruction-item">
+              <div class="instruction-icon">🖐️</div>
+              <div class="instruction-title">OPEN HAND</div>
+              <div class="instruction-desc">Start or resume game loop</div>
+            </div>
+            <div class="instruction-item">
+              <div class="instruction-icon">👆</div>
+              <div class="instruction-title">POINT INDEX</div>
+              <div class="instruction-desc">Fingertip moves precision cursor</div>
+            </div>
+            <div class="instruction-item">
+              <div class="instruction-icon">🤏</div>
+              <div class="instruction-title">PINCH FINGERS</div>
+              <div class="instruction-desc">Grab whatever item is under cursor</div>
+            </div>
+          </div>
+
+          <div id="modal-status-text" style="font-size: 11px; color: #f59e0b; margin: 12px 0;">
+            Camera permissions requested...
+          </div>
+
+          <button class="btn-primary" id="btn-start-game">START GAME (or Open Hand)</button>
+        </div>
+      </div>
+
+      <!-- Ending Card Modal -->
+      <div class="modal-overlay" id="ending-modal">
+        <div class="modal-card ending-card">
+          <h1 class="ending-title">SADHANAM KAYYILUNDU.</h1>
+          <p class="ending-subtitle">
+            Congratulations. You accomplished absolutely nothing.<br>
+            You survived 10 levels of mental harassment.
+          </p>
+
+          <div class="stat-box">
+            <div class="stat-item">
+              <div class="stat-val" id="stat-total-misses">0</div>
+              <div class="stat-lbl">TOTAL MISSES</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-val" id="stat-time-taken">0s</div>
+              <div class="stat-lbl">TIME ELAPSED</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-val">10/10</div>
+              <div class="stat-lbl">LEVELS CLEARED</div>
+            </div>
+          </div>
+
+          <button class="btn-primary" id="btn-replay">PLAY AGAIN</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Game Scripts -->
+  <script src="audio.js"></script>
+  <script src="levels.js"></script>
+  <script src="handTracking.js"></script>
+  <script src="game.js"></script>
+
+</body>
+</html>
