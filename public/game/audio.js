@@ -37,7 +37,16 @@ class SoundSynthesizer {
   isMuted() {
     return this.muted;
   }
+  playFaah() {
+  if (this.muted) return;
 
+  const audio = new Audio('assets/sounds/faah.mp3');
+  audio.volume = 0.9;
+  audio.currentTime = 0;
+  audio.play().catch(err => {
+    console.warn("FAAH sound could not play:", err);
+  });
+}
   // --- Wrong Grab Buzzer ---
   playBuzzer() {
     if (this.muted) return;

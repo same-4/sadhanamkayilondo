@@ -442,8 +442,8 @@ class SadhanamGame {
       window.soundSynth.playFalseChime();
       setTimeout(() => window.soundSynth.playBuzzer(), 180);
     } else {
-      window.soundSynth.playBuzzer();
-    }
+    window.soundSynth.playFaah();
+  }
 
     // Visual Punishment: Screen Shake & Red Flash
     const wrapper = document.getElementById('stage-wrapper');
