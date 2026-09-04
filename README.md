@@ -71,4 +71,4 @@ The game uses **MediaPipe Hand Landmarker** to track the hand in real time.
 
 ---
 #Deploy
-https://sadhanamkayilondo-g3fd.vercel.app/
+https://sadhanamkayilondo-dje2.vercel.app/
