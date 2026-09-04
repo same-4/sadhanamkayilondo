@@ -30,9 +30,6 @@ For Software:
 - Libraries used: MediaPipe Hands (Hand Landmarker) for real-time webcam hand tracking
 - Tools used: VS Code, Chrome DevTools, Git/GitHub,Vercel
 
-For Hardware:
-Not applicable — this is a software-only project running entirely in-browser via webcam
-
 ### Implementation
 For Software:
 # Installation
@@ -62,25 +59,6 @@ An example of the increasingly chaotic challenges introduced by the game.
 <img width="709" height="1884" alt="mermaid-diagram" src="https://github.com/user-attachments/assets/a6914799-5d8c-4374-9928-53682788ea58" />
 
 Workflow showing how webcam input is converted into hand gestures and game interactions.
-
-For Hardware:
-
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-# Build Photos
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
 
 ### Project Demo
 # Video
