@@ -70,3 +70,5 @@ The index fingertip acts as your cursor.
 The game uses **MediaPipe Hand Landmarker** to track the hand in real time.
 
 ---
+#Deploy
+https://sadhanamkayilondo-g3fd.vercel.app/
