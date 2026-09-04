@@ -40,7 +40,7 @@ class SoundSynthesizer {
   playFaah() {
   if (this.muted) return;
 
-  const audio = new Audio('assets/sounds/faah.mp3');
+  const audio = new Audio('assets/sounds/Faah.mp3');
   audio.volume = 0.9;
   audio.currentTime = 0;
   audio.play().catch(err => {
